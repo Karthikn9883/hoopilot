@@ -13,7 +13,7 @@ import os
 app = Flask(__name__)
 
 # Directly setting your OpenAI API key
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 
 
 def email_alert(subject, body, to):
