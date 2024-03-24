@@ -1,0 +1,105 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%);
+}
+
+#dashboard {
+    padding: 20px;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #eceff1;
+}
+
+#dashboard h1 {
+    color: #5C6BC0;
+    margin-bottom: 10px;
+}
+
+#healthStats div {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #666;
+}
+
+input[type="number"],
+select {
+    width: calc(100% - 24px);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5C6BC0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #3F51B5;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    margin: 20px;
+}
+
+#goalSetting, #exerciseLogging {
+    margin-top: 20px;
+}
+
+#goalFeedback, #exerciseFeedback {
+    color: #4caf50;
+    margin-top: 10px;
+}
+
+#workoutHistory {
+    margin-top: 20px;
+}
+
+#workoutHistory table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#workoutHistory th, 
+#workoutHistory td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#workoutHistory tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+@media (max-width: 768px) {
+    input[type="number"],
+    select {
+        width: calc(100% - 20px);
+    }
+    
+    button {
+        width: calc(100% - 40px);
+        margin: 10px;
+    }
+    
+    form {
+        margin: 10px;
+    }
+}

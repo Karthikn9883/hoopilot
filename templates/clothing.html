@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Suggestion Based on Weather</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='clothing.css') }}">
+</head>
+<body>
+    <h1>Clothing Suggestion Based on Weather</h1>
+    <p>Temperature: {{ temp_c }}°C</p>
+    <p>Weather Condition: {{ condition_text }}</p>
+    
+    <h2>Top Clothing Item:</h2>
+    <img src="{{ top_image_path }}" alt="Top Clothing Item">
+
+    <h2>Bottom Clothing Item:</h2>
+    <img src="{{ bottom_image_path }}" alt="Bottom Clothing Item">
+</body>
+</html>

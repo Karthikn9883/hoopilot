@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule Display</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='welcome.css') }}">
+</head>
+<body class="interactive-background">
+    <div class="container">
+        <h2>Student Information</h2>
+        {% for key, value in student_info.items() %}
+        <p><strong>{{ key }}:</strong> {{ value }}</p>
+        {% endfor %}
+        <h2>Classes & Schedule</h2>
+        <table border="1">
+            <tr>
+                <th>Class ID</th>
+                <th>Class Name</th>
+                <th>Instructor</th>
+                <th>Schedule</th>
+                <th>Room</th>
+                <th>Midterm Date</th>
+                <th>Midterm Time</th>
+                <th>Midterm Room</th>
+                <th>Midterm Difficulty</th>
+            </tr>
+            {% for class_info in classes %}
+            <tr>
+                {% for key, value in class_info.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <script src="{{ url_for('static', filename='welcome.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* clothing.css */
+body {
+    font-family: Arial, sans-serif;
+    background: #e2edff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+h2 {
+    margin: 20px 0;
+}
+
+img {
+    width: 200px; /* Fixed width for consistency */
+    height: 250px; /* Fixed height for consistency */
+    object-fit: contain; /* Maintain the aspect ratio within the given dimensions */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}

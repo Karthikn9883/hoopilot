@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to HooPilot</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='welcome.css') }}">
+</head>
+<body>
+    <div id="back-button-container">
+        <a href="{{ url_for('login')}}"  class="toggle-btn" >Back</a> 
+    </div>
+    <div class="interactive-background">
+        <div id="header">
+            <img src="{{ url_for('static', filename='logo.webp') }}" alt="HooPilot Logo">
+            <div>
+                <h1>HooPilot</h1>
+                <p><b>AI assistant designed to provide personalized resource <br>
+                    recommendations based on specific user needs and preferences.</b></p>
+            </div>
+        </div>
+
+        <div id="welcome-content">
+            <div id="content-box">
+                <div id="clock-widget" class="widget">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand minute-hand"></div>
+                    <div class="hand second-hand"></div>
+                </div>
+                <div id="schedule-widget" class="widget">
+                    <div class="schedule-item">Today's Schedule</div><br>
+                    <div class="schedule-item">Meeting at 12:00 PM</div>
+                    <div class="schedule-item">Lunch at 1:00 PM</div>
+                    <div class="schedule-item">Call at 2:00 PM</div>
+                </div>
+
+                <h1>Good Afternoon, Karthik</h1>
+                <a href="{{ url_for('form') }}" class="toggle-btn">Check my financial goals</a>
+                <a href="{{ url_for('upload_file') }}" class="toggle-btn">Upload Schedule</a>
+                <a href="{{ url_for('health') }}" class="toggle-btn">Health Dashboard</a>
+                <a href="{{ url_for('clothing') }}" class="toggle-btn">Clothing</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='welcome.js') }}"></script>
+    <iframe id="map-widget" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20381.954978722326!2d-78.51049006436521!3d38.03947873426896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b38648b749c4dd%3A0x405108c2cc8b5846!2sUniversity%20of%20Virginia!5e0!3m2!1sen!2sus!4v1711234853948!5m2!1sen!2sus" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient's Health Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='health.css') }}">
+</head>
+<body>
+    <div id="dashboard">
+        <h1>Patient's Health Data</h1>
+        <div id="healthStats"></div>
+    </div>
+    
+    <div id="healthDataInput">
+        <h2>Input Your Health Data</h2>
+        <form id="healthDataForm">
+            <label for="sleepHours">Sleep Hours:</label>
+            <input type="number" id="sleepHours" name="sleepHours" step="0.1" required>
+            <br>
+            <label for="heartRate">Heart Rate (bpm):</label>
+            <input type="number" id="heartRate" name="heartRate" required>
+            <br>
+            <label for="activityLevel">Activity Level (steps):</label>
+            <input type="number" id="activityLevel" name="activityLevel" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <div id="goalSetting">
+        <h2>Set Your Health Goals</h2>
+        <form id="goalForm">
+            <label for="goalType">Goal Type:</label>
+            <select id="goalType" name="goalType" onchange="toggleGoalSpecificFields()">
+                <option value="weightLoss">Weight Loss</option>
+                <option value="gainStrength">Gain Strength</option>
+            </select>
+            <br>
+            <div id="weightLossFields" style="display: none;">
+                <label for="currentWeight">Current Weight (kg):</label>
+                <input type="number" id="currentWeight" name="currentWeight">
+                <br>
+                <label for="weightGoal">Weight Goal (kg):</label>
+                <input type="number" id="weightGoal" name="weightGoal">
+            </div>
+            <!-- Submit button for setting goal -->
+            <br>
+            <button type="submit">Set Goal</button>
+        </form>
+    </div>
+    <div id="goalFeedback"></div>
+
+    <div id="exerciseLogging" style="display: none;">
+        <form id="exerciseForm">
+            <label for="exerciseType">Select Exercise:</label>
+            <select id="exerciseType" name="exerciseType">
+                <option value="squat">Squat</option>
+                <option value="benchPress">Bench Press</option>
+                <!-- Add other exercises as needed -->
+            </select>
+            <!-- Place this near your workout history section or another suitable place -->
+<button id="resetWorkoutHistory">Reset Workout History</button>
+
+            <br>
+            <label for="weightLifted">Weight Lifted (kg):</label>
+            <input type="number" id="weightLifted" name="weightLifted" required>
+            <br>
+            <label for="repsDone">Repetitions:</label>
+            <input type="number" id="repsDone" name="repsDone" required>
+            <br>
+            <button type="submit">Log Exercise</button>
+        </form>
+        <div id="exerciseFeedback"></div>
+    </div>
+    <div id="workoutHistory"></div>
+
+    <script src="{{ url_for('static', filename='health.js') }}"></script>
+</body>
+</html>

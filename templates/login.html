@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script>
+      const firebaseConfig = {
+    apiKey: "AIzaSyAvGsdrLnRjwYmls1BO_BWDAK152Pmw_S4",
+    authDomain: "hoohacks2.firebaseapp.com",
+    projectId: "hoohacks2",
+    storageBucket: "hoohacks2.appspot.com",
+    messagingSenderId: "1045938941553",
+    appId: "1:1045938941553:web:3775a65ed7cda53da875d0",
+    measurementId: "G-V180XPYX6L"
+  };
+      firebase.initializeApp(firebaseConfig);
+
+      function signIn() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        firebase.auth().signInWithEmailAndPassword(email, password)
+          .then((user) => {
+            window.location.replace("{{ url_for('welcome') }}"); // Redirect on success
+          })
+          .catch((error) => {
+            alert("The email or password you entered is incorrect. Please try again."); // Show error message
+          });
+      }
+    </script>
+    
+</head>
+<body class="interactive-background">
+  <div id="header">
+    <img src="{{ url_for('static', filename='logo.webp') }}" alt="HooPilot Logo">
+    <div>
+        <h1>HooPilot</h1>
+        <p><b>AI assistant designed to provide personalized resource <br>
+            recommendations based on specific user needs and preferences.</b></p>
+    </div>
+</div>
+    <div id="login-form">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="signIn()">Login</button>
+        <a href="{{ url_for('signup') }}" class="toggle-btn">Create an account</a>
+    </div>
+    <script>
+        // JavaScript for Interactive Background
+        document.addEventListener('mousemove', (e) => {
+          const x = e.clientX / window.innerWidth;
+          const y = e.clientY / window.innerHeight;
+          document.body.style.background = `linear-gradient(${x * 360}deg, #f6d365, #fda085)`;
+        });
+      </script>  
+</body>
+</html>

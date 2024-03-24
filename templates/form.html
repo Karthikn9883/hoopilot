@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Insights Form</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="{{ url_for('welcome') }}" class="back-button">Back to Welcome</a>
+    </div>
+    <div class="content">
+        <h2>Enter Your Financial Information</h2>
+        <form action="/generate-insights" method="post">
+            <div class="form-group">
+                Monthly Income: <input type="text" name="monthly_income"><br>
+            </div>
+            <div class="form-group">
+                Monthly Spending: <input type="text" name="monthly_spending"><br>
+            </div>
+            <div class="form-group">
+                Goal Name: <input type="text" name="goal_name"><br>
+            </div>
+            <div class="form-group">
+                Goal Amount: <input type="text" name="goal_amount"><br>
+            </div>
+            <div class="form-group">
+                Goal Priority: <input type="text" name="goal_priority"><br>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

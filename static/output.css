@@ -1,0 +1,58 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#financial-insights {
+    width: 80%;
+    max-width: 1000px; /* Adjust width as necessary */
+    border-collapse: collapse;
+    overflow-y: auto; /* Make table scrollable */
+    margin-bottom: 20px;
+}
+
+#financial-insights thead {
+    background-color: #333;
+    color: white;
+}
+
+#financial-insights th, #financial-insights td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#financial-insights tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+#financial-insights tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* If you want to add horizontal scrolling for smaller screens */
+@media screen and (max-width: 600px) {
+    #financial-insights {
+        overflow-x: auto;
+        display: block;
+    }
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #5c85d6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .back-button:hover {
+    background-color: #3a5ba0;
+  }
+  
